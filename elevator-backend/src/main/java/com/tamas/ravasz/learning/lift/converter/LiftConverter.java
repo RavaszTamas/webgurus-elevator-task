@@ -1,6 +1,6 @@
 package com.tamas.ravasz.learning.lift.converter;
 
-import com.tamas.ravasz.learning.lift.domain.Lift;
+import com.tamas.ravasz.learning.lift.domain.lift.Lift;
 import com.tamas.ravasz.learning.lift.dto.InternalButtonDto;
 import com.tamas.ravasz.learning.lift.dto.InternalPanelDto;
 import com.tamas.ravasz.learning.lift.dto.LiftDto;

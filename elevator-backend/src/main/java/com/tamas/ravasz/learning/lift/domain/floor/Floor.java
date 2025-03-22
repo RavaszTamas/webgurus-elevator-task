@@ -1,6 +1,6 @@
 package com.tamas.ravasz.learning.lift.domain.floor;
 
-import com.tamas.ravasz.learning.lift.domain.Lift;
+import com.tamas.ravasz.learning.lift.domain.lift.Lift;
 import com.tamas.ravasz.learning.lift.domain.enums.Direction;
 import com.tamas.ravasz.learning.lift.domain.enums.LiftState;
 import com.tamas.ravasz.learning.lift.domain.panels.FloorButtonPanel;
@@ -10,6 +10,9 @@ import java.util.Map;
 import lombok.Getter;
 import lombok.Setter;
 
+/**
+ * A floor inside the building
+ */
 @Getter
 @Setter
 public class Floor {
@@ -28,7 +31,7 @@ public class Floor {
    *
    * @param direction
    */
-  public void callDirection(Direction direction) {
+  public void pressDirectionButton(Direction direction) {
     if (direction == Direction.UP) {
       floorButtonPanel.moveUp();
 
@@ -42,7 +45,7 @@ public class Floor {
    *
    * @param lifts the collection storing the elevators
    */
-  public void updateIndicators(List<Lift> lifts) {
+  public void updateLiftDirectionIndicators(List<Lift> lifts) {
     for (Lift lift : lifts) {
       liftDirectionIndicators.put(lift.getId(), lift.getDirection());
       // If the elevator is on this floor and it is stopped

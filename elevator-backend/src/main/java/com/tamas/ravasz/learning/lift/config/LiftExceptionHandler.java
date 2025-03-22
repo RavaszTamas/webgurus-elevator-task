@@ -11,5 +11,5 @@ public class LiftExceptionHandler {
 
   @ResponseStatus(HttpStatus.UNPROCESSABLE_ENTITY)
   @ExceptionHandler(InvalidPayloadException.class)
-  public void handleConflict(Exception ex) {}
+  public void handlePayloadException(Exception ex) {}
 }

@@ -1,7 +1,7 @@
 package com.tamas.ravasz.learning.lift.service;
 
 import com.tamas.ravasz.learning.lift.constants.LiftConstants;
-import com.tamas.ravasz.learning.lift.domain.Lift;
+import com.tamas.ravasz.learning.lift.domain.lift.Lift;
 import com.tamas.ravasz.learning.lift.exception.LiftNotFoundException;
 import java.util.HashMap;
 import java.util.List;
@@ -19,7 +19,7 @@ public class LiftService {
     lifts.put("B", new Lift("B", LiftConstants.MAXIMUM_FLOOR));
   }
 
-  public List<Lift> getLifts() {
+  public List<Lift> getAllLifts() {
     return lifts.values().stream().toList();
   }
 

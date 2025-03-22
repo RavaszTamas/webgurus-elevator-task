@@ -21,7 +21,7 @@ public class LiftController {
 
   @GetMapping("/lift")
   public List<LiftDto> getLifts() {
-    return liftConverter.convertSource(liftService.getLifts());
+    return liftConverter.convertSource(liftService.getAllLifts());
   }
 
   @PostMapping("lift/call")

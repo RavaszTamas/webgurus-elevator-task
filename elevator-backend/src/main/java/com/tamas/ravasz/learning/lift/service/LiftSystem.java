@@ -1,7 +1,7 @@
 package com.tamas.ravasz.learning.lift.service;
 
 import com.tamas.ravasz.learning.lift.constants.LiftConstants;
-import com.tamas.ravasz.learning.lift.domain.Lift;
+import com.tamas.ravasz.learning.lift.domain.lift.Lift;
 import com.tamas.ravasz.learning.lift.domain.floor.Floor;
 import com.tamas.ravasz.learning.lift.domain.requests.ExternalRequest;
 import com.tamas.ravasz.learning.lift.domain.requests.InternalRequest;
@@ -53,11 +53,11 @@ public class LiftSystem {
             + elevatorCall.getTargetFloor());
 
     try {
-      Lift lift = selectionStrategy.selectLift(liftService.getLifts(), elevatorCall);
+      Lift lift = selectionStrategy.selectLift(liftService.getAllLifts(), elevatorCall);
 
       Floor floor = floorService.findFloorByFloorNumber(elevatorCall.getTargetFloor());
 
-      floor.callDirection(elevatorCall.getDirection());
+      floor.pressDirectionButton(elevatorCall.getDirection());
 
       lift.addExternalRequest(
           ExternalRequest.builder()

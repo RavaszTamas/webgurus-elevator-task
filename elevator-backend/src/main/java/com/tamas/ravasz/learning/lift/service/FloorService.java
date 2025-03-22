@@ -1,7 +1,7 @@
 package com.tamas.ravasz.learning.lift.service;
 
 import com.tamas.ravasz.learning.lift.constants.LiftConstants;
-import com.tamas.ravasz.learning.lift.domain.Lift;
+import com.tamas.ravasz.learning.lift.domain.lift.Lift;
 import com.tamas.ravasz.learning.lift.domain.floor.Floor;
 import com.tamas.ravasz.learning.lift.exception.FloorNotFoundException;
 import java.util.HashMap;
@@ -23,7 +23,7 @@ public class FloorService {
 
   public void updateFloorIndicators(List<Lift> lifts) {
     for (Floor floor : floors.values()) {
-      floor.updateIndicators(lifts);
+      floor.updateLiftDirectionIndicators(lifts);
     }
   }
 

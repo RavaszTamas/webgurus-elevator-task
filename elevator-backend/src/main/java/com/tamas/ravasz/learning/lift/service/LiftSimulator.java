@@ -35,10 +35,10 @@ public class LiftSimulator {
     // Simulate movements
     liftService.moveLifts();
     // Update floor indicators
-    floorService.updateFloorIndicators(liftService.getLifts());
+    floorService.updateFloorIndicators(liftService.getAllLifts());
     // Send messages to the subscribers
     messagingTemplate.convertAndSend(
-        "/topic/lifts", liftConverter.convertSource(liftService.getLifts()));
+        "/topic/lifts", liftConverter.convertSource(liftService.getAllLifts()));
     messagingTemplate.convertAndSend(
         "/topic/floors", floorConverter.convertSource(floorService.getFloors()));
   }

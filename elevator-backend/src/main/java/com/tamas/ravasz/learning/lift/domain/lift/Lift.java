@@ -1,4 +1,4 @@
-package com.tamas.ravasz.learning.lift.domain;
+package com.tamas.ravasz.learning.lift.domain.lift;
 
 import com.tamas.ravasz.learning.lift.domain.enums.Direction;
 import com.tamas.ravasz.learning.lift.domain.enums.LiftState;
@@ -17,13 +17,16 @@ public class Lift {
   private final int NO_TARGET_FLOOR = -1;
 
   private final String id;
+
+  private LiftState state;
+  private int currentFloor; // Seven segment display, it can be a number
+  private Direction direction; // the direction the elevator is going even when stopped or not
+  private int targetFloorToVisit = NO_TARGET_FLOOR; // The floor the elevator wants to go to
+
   private final Queue<InternalRequest> internalRequests; // Internal stopping points
   private final Queue<ExternalRequest> requests; // Requests submitted to the elevator externally
   private final InternalLiftPanel internalPanel; // Internal button panel
-  private int currentFloor; // Seven segment display, it can be a number
-  private Direction direction; // the direction the elevator is going even when stopped or not
-  private LiftState state;
-  private int targetFloorToVisit = NO_TARGET_FLOOR; // The floor the elevator wants to go to
+
 
   public Lift(String id, int currentFloor) {
     this.id = id;
