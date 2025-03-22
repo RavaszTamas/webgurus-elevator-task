@@ -1,5 +1,5 @@
 import Axios from "axios";
-import { env } from "../config/env.ts";
+import { env } from "@/config";
 
 export const api = Axios.create({
   baseURL: env.API_URL,

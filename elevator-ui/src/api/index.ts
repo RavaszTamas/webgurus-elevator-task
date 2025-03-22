@@ -1,1 +1,1 @@
-export * from "./elevator";
+export * from "./lift";

@@ -1,1 +1,1 @@
-export * from "./elevator-system.tsx";
+export * from "./lift-system.tsx";
